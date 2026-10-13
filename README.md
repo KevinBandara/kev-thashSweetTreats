@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎂 Kev & Thash Sweet Treats — Official Website
 
-## Getting Started
+> **Crafted with Love, Baked to Perfection**  
+> Premium custom cakes, cupcakes, brownies & sweet treats handcrafted in **Malamulla, Panadura, Sri Lanka**.
 
-First, run the development server:
+---
 
+## 🌟 Features
+
+- **🍰 Brand Aligned Design**: Pastel pink & chocolate brown theme crafted around the official brand logo.
+- **🇱🇰 Localized for Sri Lanka**:
+  - Located in **Malamulla, Panadura**.
+  - **Self-Pickup Only** (fresh cake pickup directly coordinated).
+  - All prices displayed in **Sri Lankan Rupees (LKR / Rs. / රු.)**.
+  - Verified social proof: **10+ Happy Customers**, **5.0★ Rating**.
+- **🌐 Bilingual Support (English & Sinhala)**:
+  - Instant toggle between **English** and polite, natural **සිංහල**.
+  - Persisted user language preference across visits.
+- **💬 Direct WhatsApp Integration**:
+  - Interactive order enquiry form that validates details and instantly opens `wa.me/94718511165` with pre-filled order specs.
+  - Quick order buttons on each menu item and celebration package.
+  - Floating WhatsApp action button with pulse animation.
+- **🔍 Advanced SEO & OpenGraph**:
+  - Next.js dynamic OpenGraph banner (`/opengraph-image`).
+  - Google Schema.org `LocalBusiness / Bakery` JSON-LD with geo-coordinates for Panadura.
+  - Auto-generated `sitemap.xml` and `robots.txt`.
+- **⚙️ 100% Configurable via `.env.local`**:
+  - Change phone number, email, address, pickup policy, or stats anytime without editing code.
+
+---
+
+## 🚀 Quick Start
+
+### 1. Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configure Environment Variables
+Copy `.env.example` to `.env.local` (already configured for Sri Lanka):
+```bash
+cp .env.example .env.local
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Run Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Build for Production
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ⚙️ Environment Variables (`.env.local`)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Variable | Description | Default |
+|---|---|---|
+| `NEXT_PUBLIC_BUSINESS_NAME` | Business name | `Kev & Thash Sweet Treats` |
+| `NEXT_PUBLIC_PHONE` | Phone for calls | `0718511165` |
+| `NEXT_PUBLIC_PHONE_DISPLAY` | Phone formatted | `+94 71 851 1165` |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER`| WhatsApp link number (with 94) | `94718511165` |
+| `NEXT_PUBLIC_EMAIL` | Contact email | `kevandthash@gmail.com` |
+| `NEXT_PUBLIC_ADDRESS` | Address (EN) | `Malamulla, Panadura, Sri Lanka` |
+| `NEXT_PUBLIC_ADDRESS_SI` | Address (SI) | `මලමුල්ල, පානදුර, ශ්‍රී ලංකාව` |
+| `NEXT_PUBLIC_HAPPY_CUSTOMERS`| Social proof stat | `10+` |
+| `NEXT_PUBLIC_CURRENCY` | Currency code | `LKR` |
+| `NEXT_PUBLIC_CURRENCY_SYMBOL`| Currency symbol | `Rs.` |
+| `NEXT_PUBLIC_SITE_URL` | Live production URL | `https://kevandthashsweets.vercel.app` |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🌐 Deploy to Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push this repository to GitHub:
+   ```bash
+   git remote add origin https://github.com/KevinBandara/kev-thashSweetTreats.git
+   git branch -M main
+   git push -u origin main
+   ```
+2. Import the repository in [Vercel](https://vercel.com).
+3. Set the project name to `kevandthashsweets` (domain: `https://kevandthashsweets.vercel.app`).
+4. Add the environment variables from `.env.example`.
+5. Click **Deploy**!
