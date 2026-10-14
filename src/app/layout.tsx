@@ -125,11 +125,13 @@ export const metadata: Metadata = {
   /* --- Icons --- */
   icons: {
     icon: [
-      { url: '/KevAndThashSweetTreatsLogo.png', sizes: 'any' },
       { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/KevAndThashSweetTreatsLogo.png', sizes: 'any' },
     ],
-    apple: [{ url: '/KevAndThashSweetTreatsLogo.png', sizes: '180x180', type: 'image/png' }],
-    shortcut: '/KevAndThashSweetTreatsLogo.png',
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: '/favicon.ico',
   },
 
   /* --- App-specific --- */
