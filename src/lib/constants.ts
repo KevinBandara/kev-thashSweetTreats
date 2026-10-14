@@ -35,6 +35,12 @@ export const LOCATION_CITY =
 export const LOCATION_AREA =
   process.env.NEXT_PUBLIC_LOCATION_AREA ?? 'Malamulla, Panadura';
 
+// Precise Geo Location: 6°43'29.9"N 79°56'25.6"E
+export const GEO_COORDINATES = {
+  latitude: 6.724972,
+  longitude: 79.940444,
+} as const;
+
 export const PICKUP_ONLY = true;
 export const DELIVERY_NOTE =
   process.env.NEXT_PUBLIC_DELIVERY_NOTE ??
@@ -53,16 +59,13 @@ export const CURRENCY_SYMBOL =
 export const CURRENCY_SYMBOL_SI =
   process.env.NEXT_PUBLIC_CURRENCY_SYMBOL_SI ?? 'රු.';
 
-export const INSTAGRAM =
-  process.env.NEXT_PUBLIC_INSTAGRAM ??
-  'https://instagram.com/kevandthashsweettreats';
 export const FACEBOOK =
   process.env.NEXT_PUBLIC_FACEBOOK ??
   'https://facebook.com/kevandthashsweettreats';
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}` as const;
 
 export const GOOGLE_MAPS_URL =
-  'https://maps.google.com/?q=Malamulla+Panadura+Sri+Lanka' as const;
+  'https://www.google.com/maps?q=6.724972,79.940444' as const;
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kevandthashsweets.vercel.app';
@@ -149,11 +152,11 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     id: 2,
     name: 'Chocolate Drip Cake',
-    nameSi: 'චොකලට් ඩ්‍රිප් කේක්',
+    nameSi: 'චොක්ලට් ඩ්‍රිප් කේක්',
     description:
       'Decadent chocolate drip cascading over moist chocolate fudge cake, topped with chocolates and sweet treats.',
     descriptionSi:
-      'චොකලට් ගානාශ් ඩ්‍රිප් සහිත ප්‍රණීත සහ තෙතමනය සහිත රසවත් චොකලට් ෆජ් කේක්.',
+      'චොක්ලට් ගානාශ් ඩ්‍රිප් සහිත රසවත්, තෙතමනය පිරි චොක්ලට් ෆජ් කේක් නිර්මාණය.',
     price: 4200,
     priceLabel: 'From Rs. 4,200',
     priceLabelSi: 'රු. 4,200 සිට',
@@ -168,7 +171,7 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     id: 3,
     name: 'Floral Buttercream Cake',
-    nameSi: 'මල් සැරසිලි බටර්ක්‍රීම් කේක්',
+    nameSi: 'මල් මෝස්තර බටර්ක්‍රීම් කේක්',
     description:
       'Hand-piped delicate buttercream flowers in soft pastel tones. Elegance in every single slice.',
     descriptionSi:
@@ -189,7 +192,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description:
       'Multi-tiered centerpiece cake tailored for weddings, engagements, and milestone celebrations.',
     descriptionSi:
-      'විවාහ මංගල්‍ය හා විශාල උත්සව සඳහා ඔබේ තේමාවට ගැලපෙන ආකර්ෂණීය තට්ටු කේක් නිර්මාණ.',
+      'විවාහ මංගල්‍ය හා උත්සව සඳහා ඔබේ තේමාවට ගැලපෙන අලංකාර තට්ටු කේක් නිර්මාණ.',
     price: 15000,
     priceLabel: 'From Rs. 15,000',
     priceLabelSi: 'රු. 15,000 සිට',
@@ -204,11 +207,11 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     id: 5,
     name: 'Signature Cupcakes (Box of 12)',
-    nameSi: 'සිග්නේචර් කප්කේක් (12 පෙට්ටිය)',
+    nameSi: 'කප්කේක් (12 පෙට්ටිය)',
     description:
       'Twelve fluffy cupcakes with swirling rosette buttercream in vanilla, chocolate, and strawberry.',
     descriptionSi:
-      'වැනිලා, චොකලට් සහ ස්ට්‍රෝබෙරි රසයන්ගෙන් සමන්විත අලංකාර බටර්ක්‍රීම් රෝස මෝස්තර කප්කේක් 12ක්.',
+      'වැනිලා, චොක්ලට් සහ ස්ට්‍රෝබෙරි රසයන්ගෙන් සමන්විත අලංකාර බටර්ක්‍රීම් මල් මෝස්තර කප්කේක් 12ක්.',
     price: 2400,
     priceLabel: 'Rs. 2,400 / box',
     priceLabelSi: 'රු. 2,400 / පෙට්ටිය',
@@ -240,18 +243,18 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     id: 7,
     name: 'Fudgy Brownies Box (9 pcs)',
-    nameSi: 'චොකලට් ෆජී බ්‍රවුනීස් (9 පෙට්ටිය)',
+    nameSi: 'චොක්ලට් ෆජී බ්‍රවුනීස් (9 පෙට්ටිය)',
     description:
       'Dense, ultra-fudgy Belgian chocolate brownies with crisp crinkle tops and rich gooey centers.',
     descriptionSi:
-      'උසස් කොකෝවා රසයෙන් සහ හැපෙනසුළු මතුපිටකින් යුතු අතිශය රසවත් ෆජී චොකලට් බ්‍රවුනීස් 9ක්.',
+      'නියම චොක්ලට් රසයෙන් යුතු, ඇතුළත සොෆ්ට් ෆජී ගතිය පිරි ප්‍රණීත බ්‍රවුනීස් 9ක්.',
     price: 2500,
     priceLabel: 'Rs. 2,500 / box',
     priceLabelSi: 'රු. 2,500 / පෙට්ටිය',
     category: 'Brownies',
     emoji: '🍫',
     badge: 'Rich & Gooey',
-    badgeSi: 'නියම චොකලට්',
+    badgeSi: 'නියම චොක්ලට්',
     circleColor: '#FED7AA',
     gradientFrom: '#FFF5F7',
     gradientTo: '#FED7AA',
@@ -263,7 +266,7 @@ export const MENU_ITEMS: MenuItem[] = [
     description:
       'Layers of soft cake, chocolate ganache, and creamy goodness layered inside cute glass jars.',
     descriptionSi:
-      'වීදුරු බෝතල් තුළ තට්ටු වශයෙන් සකස් කළ චොකලට් සහ ක්‍රීම් පිරි අතුරුපස කේක් ජාර් 4ක්.',
+      'වීදුරු බෝතල් තුළ තට්ටු වශයෙන් සකස් කළ චොක්ලට් සහ ක්‍රීම් පිරි අතුරුපස කේක් ජාර් 4ක්.',
     price: 2200,
     priceLabel: 'Rs. 2,200 / set',
     priceLabelSi: 'රු. 2,200 / කට්ටලය',
@@ -298,7 +301,7 @@ export const EVENT_PACKAGES: EventPackage[] = [
   {
     id: 'sweet-delight',
     name: 'Sweet Delight Package',
-    nameSi: 'ස්වීට් ඩිලයිට් පැකේජය',
+    nameSi: 'Sweet Delight (ස්වීට් ඩිලයිට්)',
     price: 'From Rs. 5,500',
     priceSi: 'රු. 5,500 සිට',
     tagline: 'Ideal for intimate family birthdays & milestones',
@@ -307,41 +310,41 @@ export const EVENT_PACKAGES: EventPackage[] = [
     bgColor: '#ffffff',
     features: [
       { text: '1× Custom Birthday Cake (1 kg)', textSi: 'කිලෝ 1ක උපන්දින කේක් 1ක්', included: true },
-      { text: '6× Rosette Buttercream Cupcakes', textSi: 'රෝස මෝස්තර බටර්ක්‍රීම් කප්කේක් 6ක්', included: true },
+      { text: '6× Rosette Buttercream Cupcakes', textSi: 'මල් මෝස්තර බටර්ක්‍රීම් කප්කේක් 6ක්', included: true },
       { text: 'Free Candles & Personalized Topper', textSi: 'ඉටිපන්දම් සහ නම සහිත ටොපරය නොමිලේ', included: true },
-      { text: 'Fresh Self-Pickup in Malamulla, Panadura', textSi: 'මලමුල්ල, පානදුරින් නැවුම්ව ලබාගැනීම', included: true },
-      { text: 'Fudgy Brownies Box', textSi: 'ෆජී බ්‍රවුනීස් පෙට්ටිය', included: false },
+      { text: 'Fresh Self-Pickup in Malamulla, Panadura', textSi: 'මලමුල්ල, පානදුරින් ඇවිත් ලබාගැනීම', included: true },
+      { text: 'Fudgy Brownies Box', textSi: 'චොක්ලට් බ්‍රවුනීස් පෙට්ටිය', included: false },
       { text: 'Dessert Cake Jars', textSi: 'කේක් ජාර්ස් කට්ටලය', included: false },
     ],
   },
   {
     id: 'celebration-party',
     name: 'Party Celebration Package',
-    nameSi: 'පාටි සැමරුම් පැකේජය',
+    nameSi: 'Party Celebration (පාටි සැමරුම්)',
     price: 'From Rs. 12,500',
     priceSi: 'රු. 12,500 සිට',
     tagline: 'Our most popular choice for parties & special events',
-    taglineSi: 'සාද සහ උත්සව සඳහා වැඩිපුරම තෝරාගන්නා පැකේජය',
+    taglineSi: 'සාද සහ උත්සව සඳහා වැඩිපුරම තෝරාගන්නා කට්ටලය',
     accentColor: '#E91E8C',
     bgColor: '#FFF5F7',
     recommended: true,
     features: [
       { text: '1× 2-Tier / Large Theme Cake (2 kg)', textSi: 'කිලෝ 2ක තට්ටු හෝ තේමා කේක් 1ක්', included: true },
       { text: '12× Assorted Buttercream Cupcakes', textSi: 'විවිධ රසැති බටර්ක්‍රීම් කප්කේක් 12ක්', included: true },
-      { text: '1× Box of 9 Belgian Chocolate Brownies', textSi: 'බෙල්ජියන් චොකලට් බ්‍රවුනීස් 9ක පෙට්ටියක්', included: true },
+      { text: '1× Box of 9 Belgian Chocolate Brownies', textSi: 'චොක්ලට් බ්‍රවුනීස් 9ක පෙට්ටියක්', included: true },
       { text: 'Custom Color & Theme Matching', textSi: 'ඔබේ උත්සව තේමාවට ගැලපෙන වර්ණ', included: true },
       { text: 'Gift-Ready Packaging & Greeting Note', textSi: 'ආකර්ෂණීය තෑගි ඇසුරුම සහ සුභපැතුම් පත', included: true },
-      { text: 'Fresh Self-Pickup in Malamulla, Panadura', textSi: 'මලමුල්ල, පානදුරින් නැවුම්ව ලබාගැනීම', included: true },
+      { text: 'Fresh Self-Pickup in Malamulla, Panadura', textSi: 'මලමුල්ල, පානදුරින් ඇවිත් ලබාගැනීම', included: true },
     ],
   },
   {
     id: 'grand-occasion',
     name: 'Grand Occasion Package',
-    nameSi: 'ග්‍රෑන්ඩ් උත්සව පැකේජය',
+    nameSi: 'Grand Occasion (ග්‍රෑන්ඩ් උත්සව)',
     price: 'From Rs. 25,000',
     priceSi: 'රු. 25,000 සිට',
     tagline: 'Complete dessert spread for weddings & grand celebrations',
-    taglineSi: 'විවාහ සහ මහා උත්සව සඳහා සම්පූර්ණ අතුරුපස එකතුව',
+    taglineSi: 'විවාහ සහ විශාල උත්සව සඳහා සම්පූර්ණ අතුරුපස එකතුව',
     accentColor: '#3D1A0A',
     bgColor: '#ffffff',
     features: [
@@ -356,7 +359,7 @@ export const EVENT_PACKAGES: EventPackage[] = [
 ];
 
 /* ------------------------------------------------------------
-   AUTHENTIC SRI LANKAN TESTIMONIALS
+   AUTHENTIC SRI LANKAN TESTIMONIALS (Natural, warm Sinhala)
    ------------------------------------------------------------ */
 export interface Testimonial {
   id: number;
@@ -383,7 +386,7 @@ export const TESTIMONIALS: Testimonial[] = [
     review:
       'We ordered a custom birthday cake for my daughter and it was beyond amazing! The buttercream was so soft and not overly sweet. Picking it up in Malamulla was super easy. Thank you Kev & Thash!',
     reviewSi:
-      'දුවගේ උපන්දිනයට කේක් එකක් ගත්තා, ඇත්තටම හිතුවටත් වඩා ගොඩක් ලස්සනයි වගේම රසයි. පැණි රසත් නියම ප්‍රමාණයට තිබ්බා. මලමුල්ලෙන් ඇවිත් ගන්න එකත් හරිම ලේසියි. බොහොම ස්තූතියි!',
+      'දුවගේ බර්ත්ඩේ එකට කේක් එකක් ගත්තේ. බටර්ක්‍රීම් එක හරිම සොෆ්ට්, පැණිරසත් නියම ගානට තිබ්බා. කිව්ව වෙලාවටම මලමුල්ලෙන් ලෑස්ති කරලා දුන්නා. තෑන්ක් යූ Kev & Thash!',
     occasion: "Daughter's Birthday",
     occasionSi: 'දුවගේ උපන්දිනය',
     initial: 'N',
@@ -398,7 +401,7 @@ export const TESTIMONIALS: Testimonial[] = [
     review:
       'Ordered the chocolate drip cake for our anniversary. The moist layers and rich Belgian chocolate flavor were top notch! WhatsApp ordering was so fast and courteous. 10/10 recommend!',
     reviewSi:
-      'අපේ ඇනිවසරි එකට චොකලට් ඩ්‍රිප් කේක් එකක් ගත්තා. නියම චොකලට් රස සහ තෙතමනය. WhatsApp මැසේජ් වලට ඉක්මනින් උත්තර දුන්නා. අනිවාර්යයෙන්ම හැමෝටම රෙකමදාරු කරනවා!',
+      'අපේ ඇනිවසරි එකට චොක්ලට් ඩ්‍රිප් කේක් එකක් හැදුවේ. චොක්ලට් රස පිරිලා, කේක් එකත් හොඳටම තෙතමනයට තිබ්බා. WhatsApp මැසේජ් එකක් දාපු ගමන් ඉක්මනටම විස්තර එවලා උදව් කළා. ඇත්තටම සුපිරි!',
     occasion: 'Anniversary Cake',
     occasionSi: 'විවාහ සංවත්සරය',
     initial: 'K',
@@ -413,7 +416,7 @@ export const TESTIMONIALS: Testimonial[] = [
     review:
       'The cupcakes box of 12 was such a delight! The designs looked like real flower bouquets. Came all the way from Moratuwa to pick it up and it was totally worth every rupee.',
     reviewSi:
-      'කප්කේක් 12 පෙට්ටියක් ගත්තේ. මල් මෝස්තර ඇත්ත මල් වගේම හරිම ලස්සනයි. මොරටුවේ ඉඳන් ඇවිත් ගත්තට කිසිම පාඩුවක් නෑ, වියදම් කරපු මුදලට උපරිම වටිනාකමක් තියෙනවා.',
+      'කප්කේක් සෙට් එකක් ගත්තේ, මල් ඩිසයින් එක ඇත්ත මල් වගේම හරිම ලස්සනට කරලා තිබ්බා. මොරටුවේ ඉඳන් ඇවිත් ගත්තට කිසිම පාඩුවක් නෑ, ගෙදර හැමෝම ගොඩක් ආසාවෙන් කෑවා.',
     occasion: 'Family Gathering',
     occasionSi: 'පවුලේ සුහද හමුව',
     initial: 'D',
@@ -426,9 +429,9 @@ export const TESTIMONIALS: Testimonial[] = [
     locationSi: 'වාද්දුව',
     stars: 5,
     review:
-      'Fudgy brownies were extraordinary! Crunchy top and gooey center. Everyone at our office party loved it. We will definitely be regular customers now.',
+      'Fudgy brownies were extraordinary! Rich chocolate flavor and soft gooey center. Everyone at our office party loved it. We will definitely be regular customers now.',
     reviewSi:
-      'චොකලට් බ්‍රවුනීස් එක නම් නියමයි! හැපෙනසුළු මතුපිට සහ ඇතුළත සොෆ්ට් චොකලට් රස. අපේ ඔෆිස් එකේ හැමෝම ආසාවෙන් කෑවා. ආයෙත් අනිවාර්යයෙන්ම ගන්නවා.',
+      'චොක්ලට් බ්‍රවුනීස් පෙට්ටිය නම් නියමයි! චොක්ලට් රස උපරිමයි, නියම සොෆ්ට් ෆජී ගතියට තිබ්බා. ඔෆිස් එකේ සෙට් එකම කිව්වා ආයෙත් මේකෙන්ම ගන්න කියලා.',
     occasion: 'Office Celebration',
     occasionSi: 'කාර්යාල සැමරුම',
     initial: 'S',

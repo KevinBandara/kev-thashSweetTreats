@@ -408,7 +408,7 @@ export default function ContactSection() {
                   {t.contact.pickupMapTitle}
                 </p>
                 <p className="text-xs text-[#7A3F2A]">
-                  Western Province, Sri Lanka 🇱🇰
+                  Malamulla, Panadura (6°43&apos;29.9&quot;N 79°56&apos;25.6&quot;E) 🇱🇰
                 </p>
               </div>
               <a

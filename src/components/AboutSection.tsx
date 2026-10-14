@@ -156,7 +156,7 @@ export default function AboutSection() {
               <div className="w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
                 {i === 0 ? '🌾' : i === 1 ? '💝' : i === 2 ? '🎨' : '🛍️'}
               </div>
-              <h4 className="font-bold text-lg text-[#3D1A0A] mb-2 font-playfair">
+              <h4 className={`font-bold text-lg text-[#3D1A0A] mb-2 ${lang === 'si' ? 'font-sans' : 'font-playfair'}`}>
                 {v.title}
               </h4>
               <p className="text-sm text-[#7A3F2A] leading-relaxed">

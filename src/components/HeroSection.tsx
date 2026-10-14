@@ -179,33 +179,50 @@ export default function HeroSection() {
 
               {/* Main heading */}
               <h1
-                className="hero-fade-2 font-playfair text-4xl sm:text-5xl xl:text-6xl font-extrabold leading-[1.15] tracking-tight"
+                className={`hero-fade-2 text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight ${
+                  lang === 'si'
+                    ? 'leading-[1.38] py-2 font-sans'
+                    : 'font-playfair leading-[1.18]'
+                }`}
                 style={{ color: '#3D1A0A' }}
               >
                 {t.hero.headingLine1}{' '}
-                <span
-                  className="italic"
-                  style={{
-                    background: 'linear-gradient(135deg, #EC4899, #E91E8C)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
-                  {t.hero.headingLove}
-                </span>
+                {lang === 'si' ? (
+                  <span className="text-pink-600 inline-block">
+                    {t.hero.headingLove}
+                  </span>
+                ) : (
+                  <span
+                    className="italic inline-block"
+                    style={{
+                      background: 'linear-gradient(135deg, #EC4899, #E91E8C)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                  >
+                    {t.hero.headingLove}
+                  </span>
+                )}
                 <br />
                 {t.hero.headingLine2}{' '}
-                <span
-                  style={{
-                    background: 'linear-gradient(135deg, #E91E8C, #EC4899)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}
-                >
-                  {t.hero.headingPerfection}
-                </span>
+                {lang === 'si' ? (
+                  <span className="text-pink-600 inline-block">
+                    {t.hero.headingPerfection}
+                  </span>
+                ) : (
+                  <span
+                    className="inline-block"
+                    style={{
+                      background: 'linear-gradient(135deg, #E91E8C, #EC4899)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                  >
+                    {t.hero.headingPerfection}
+                  </span>
+                )}
               </h1>
 
               {/* Subheading */}

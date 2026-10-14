@@ -10,7 +10,6 @@ import {
   ADDRESS,
   ADDRESS_SI,
   WHATSAPP_LINK,
-  INSTAGRAM,
   FACEBOOK,
 } from '@/lib/constants';
 
@@ -162,22 +161,13 @@ export default function Footer() {
             </h4>
             <div className="flex items-center gap-3">
               <a
-                href={INSTAGRAM}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-pink-900/60 hover:bg-pink-600 text-white flex items-center justify-center transition-all text-xs font-bold"
-                aria-label="Instagram"
-              >
-                IG
-              </a>
-              <a
                 href={FACEBOOK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-pink-900/60 hover:bg-blue-600 text-white flex items-center justify-center transition-all text-xs font-bold"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-pink-900/60 hover:bg-blue-600 text-white transition-all text-xs font-bold"
                 aria-label="Facebook"
               >
-                FB
+                <span>Follow us on Facebook</span>
               </a>
             </div>
           </div>

@@ -194,8 +194,8 @@ const structuredData = {
       },
       geo: {
         '@type': 'GeoCoordinates',
-        latitude: 6.7132,
-        longitude: 79.9074,
+        latitude: 6.724972,
+        longitude: 79.940444,
       },
       openingHoursSpecification: [
         {
@@ -224,9 +224,8 @@ const structuredData = {
           name: 'Western Province, Sri Lanka',
         },
       ],
-      hasMap: 'https://maps.google.com/?q=Malamulla+Panadura+Sri+Lanka',
+      hasMap: 'https://www.google.com/maps?q=6.724972,79.940444',
       sameAs: [
-        'https://instagram.com/kevandthashsweettreats',
         'https://facebook.com/kevandthashsweettreats',
         `https://wa.me/94${phone.replace(/^0/, '')}`,
       ],
