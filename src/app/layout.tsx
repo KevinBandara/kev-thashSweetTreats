@@ -73,7 +73,14 @@ export const metadata: Metadata = {
       'Handcrafted custom cakes, cupcakes & treats made with love in Malamulla, Panadura, Sri Lanka. 10+ happy customers. Order via WhatsApp for self-pickup.',
     images: [
       {
-        url: '/KevAndThashSweetTreatsLogo.png',
+        url: `${siteUrl}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Kev & Thash Sweet Treats — Malamulla, Panadura, Sri Lanka',
+        type: 'image/png',
+      },
+      {
+        url: `${siteUrl}/KevAndThashSweetTreatsLogo.png`,
         width: 800,
         height: 800,
         alt: 'Kev & Thash Sweet Treats Logo',
@@ -88,7 +95,7 @@ export const metadata: Metadata = {
     title: 'Kev & Thash Sweet Treats | Custom Cakes in Panadura',
     description:
       'Handcrafted custom cakes & desserts made with love in Malamulla, Panadura, Sri Lanka. Order via WhatsApp!',
-    images: ['/KevAndThashSweetTreatsLogo.png'],
+    images: [`${siteUrl}/og-image.png`],
   },
 
   /* --- Robots --- */

@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og';
+import fs from 'node:fs';
+import path from 'node:path';
 
 export const runtime = 'nodejs';
 export const alt = 'Kev & Thash Sweet Treats — Panadura, Sri Lanka';
@@ -9,6 +11,11 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
+  // Read official logo as base64 data URI
+  const logoPath = path.join(process.cwd(), 'public', 'KevAndThashSweetTreatsLogo.png');
+  const logoBuffer = fs.readFileSync(logoPath);
+  const logoBase64 = `data:image/png;base64,${logoBuffer.toString('base64')}`;
+
   return new ImageResponse(
     (
       <div
@@ -21,139 +28,190 @@ export default async function Image() {
           justifyContent: 'center',
           backgroundColor: '#FFF5F7',
           backgroundImage:
-            'radial-gradient(circle at 25px 25px, #fbcfe8 2%, transparent 0%), radial-gradient(circle at 75px 75px, #f472b6 2%, transparent 0%)',
-          backgroundSize: '100px 100px',
-          padding: '40px 60px',
-          fontFamily: 'serif',
+            'radial-gradient(circle at 20px 20px, #FCE7F3 3px, transparent 0%), radial-gradient(circle at 60px 60px, #FBCFE8 3px, transparent 0%)',
+          backgroundSize: '80px 80px',
+          padding: '36px 48px',
+          fontFamily: 'sans-serif',
         }}
       >
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
+            flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+            justifyContent: 'space-between',
+            backgroundColor: 'rgba(255, 255, 255, 0.96)',
             borderRadius: '32px',
-            border: '4px solid #F472B6',
-            boxShadow: '0 20px 50px rgba(236, 72, 153, 0.2)',
-            padding: '48px 64px',
+            border: '3px solid #F472B6',
+            boxShadow: '0 24px 60px rgba(236, 72, 153, 0.22)',
+            padding: '48px 56px',
             width: '100%',
             height: '100%',
+            gap: '40px',
           }}
         >
-          {/* Badge */}
+          {/* Left Column: Brand Logo */}
           <div
             style={{
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
-              backgroundColor: '#FCE7F3',
-              borderRadius: '9999px',
-              padding: '10px 28px',
-              marginBottom: '20px',
-              border: '1.5px solid #F472B6',
+              justifyContent: 'center',
+              flexShrink: 0,
             }}
           >
-            <span
+            {/* Real Logo Image */}
+            <img
+              src={logoBase64}
+              alt="Kev & Thash Sweet Treats Logo"
+              width={240}
+              height={240}
               style={{
-                fontSize: '22px',
+                borderRadius: '9999px',
+                border: '6px solid #EC4899',
+                boxShadow: '0 12px 36px rgba(236, 72, 153, 0.35)',
+                objectFit: 'cover',
+              }}
+            />
+
+            {/* Rating Pill */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                backgroundColor: '#FFF1F2',
+                borderRadius: '9999px',
+                border: '1.5px solid #FDA4AF',
+                padding: '8px 20px',
+                marginTop: '20px',
+                fontSize: '18px',
                 fontWeight: 'bold',
                 color: '#BE185D',
-                letterSpacing: '2px',
+              }}
+            >
+              ⭐ 5.0 Rating • 10+ Customers
+            </div>
+          </div>
+
+          {/* Right Column: Information & Badges */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              justifyContent: 'center',
+              flex: 1,
+            }}
+          >
+            {/* Panadura Location Badge */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                backgroundColor: '#FCE7F3',
+                borderRadius: '9999px',
+                border: '1.5px solid #F472B6',
+                padding: '8px 22px',
+                marginBottom: '16px',
+                fontSize: '17px',
+                fontWeight: 'bold',
+                color: '#BE185D',
+                letterSpacing: '1px',
                 textTransform: 'uppercase',
               }}
             >
-              📍 Malamulla, Panadura • Sri Lanka
-            </span>
-          </div>
-
-          {/* Business Title */}
-          <h1
-            style={{
-              fontSize: '64px',
-              fontWeight: '900',
-              color: '#3D1A0A',
-              margin: '0 0 12px 0',
-              textAlign: 'center',
-              letterSpacing: '-1px',
-            }}
-          >
-            Kev &amp; Thash Sweet Treats
-          </h1>
-
-          {/* Tagline */}
-          <p
-            style={{
-              fontSize: '30px',
-              fontWeight: '600',
-              fontStyle: 'italic',
-              color: '#DB2777',
-              margin: '0 0 28px 0',
-              textAlign: 'center',
-            }}
-          >
-            Crafted with Love, Baked to Perfection
-          </p>
-
-          {/* Feature Pills */}
-          <div
-            style={{
-              display: 'flex',
-              gap: '16px',
-              marginTop: '10px',
-            }}
-          >
-            <div
-              style={{
-                backgroundColor: '#FFF1F2',
-                borderRadius: '9999px',
-                padding: '10px 22px',
-                fontSize: '20px',
-                fontWeight: 'bold',
-                color: '#9F1239',
-                border: '1px solid #FECDD3',
-              }}
-            >
-              🎂 Custom Cakes
+              📍 Malamulla, Panadura • Sri Lanka Orders
             </div>
-            <div
+
+            {/* Brand Title */}
+            <h1
               style={{
-                backgroundColor: '#FEF3C7',
-                borderRadius: '9999px',
-                padding: '10px 22px',
-                fontSize: '20px',
-                fontWeight: 'bold',
-                color: '#92400E',
-                border: '1px solid #FDE68A',
+                fontSize: '56px',
+                fontWeight: '900',
+                color: '#3D1A0A',
+                margin: '0 0 6px 0',
+                letterSpacing: '-1px',
+                lineHeight: 1.1,
               }}
             >
-              🧁 Cupcakes &amp; Brownies
+              Kev &amp; Thash
+            </h1>
+            <div
+              style={{
+                fontSize: '24px',
+                fontWeight: '800',
+                color: '#EC4899',
+                letterSpacing: '5px',
+                textTransform: 'uppercase',
+                margin: '0 0 16px 0',
+              }}
+            >
+              Sweet Treats
             </div>
-            <div
+
+            {/* Tagline */}
+            <p
               style={{
-                backgroundColor: '#DCFCE7',
-                borderRadius: '9999px',
-                padding: '10px 22px',
-                fontSize: '20px',
-                fontWeight: 'bold',
-                color: '#166534',
-                border: '1px solid #BBF7D0',
+                fontSize: '24px',
+                fontWeight: '600',
+                fontStyle: 'italic',
+                color: '#7A3F2A',
+                margin: '0 0 24px 0',
+                lineHeight: 1.3,
               }}
             >
-              💬 WhatsApp Orders
-            </div>
+              Crafted with Love, Baked to Perfection
+            </p>
+
+            {/* Feature Pills Grid */}
             <div
               style={{
-                backgroundColor: '#F3E8FF',
-                borderRadius: '9999px',
-                padding: '10px 22px',
-                fontSize: '20px',
-                fontWeight: 'bold',
-                color: '#6B21A8',
-                border: '1px solid #E9D5FF',
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '12px',
               }}
             >
-              🛍️ Panadura Self-Pickup
+              <div
+                style={{
+                  backgroundColor: '#FFF0F5',
+                  borderRadius: '9999px',
+                  padding: '8px 18px',
+                  fontSize: '17px',
+                  fontWeight: 'bold',
+                  color: '#9D174D',
+                  border: '1px solid #FBCFE8',
+                }}
+              >
+                🎂 Custom Cakes
+              </div>
+
+              <div
+                style={{
+                  backgroundColor: '#FEF3C7',
+                  borderRadius: '9999px',
+                  padding: '8px 18px',
+                  fontSize: '17px',
+                  fontWeight: 'bold',
+                  color: '#92400E',
+                  border: '1px solid #FDE68A',
+                }}
+              >
+                🛍️ Self-Pickup in Panadura
+              </div>
+
+              <div
+                style={{
+                  backgroundColor: '#DCFCE7',
+                  borderRadius: '9999px',
+                  padding: '8px 18px',
+                  fontSize: '17px',
+                  fontWeight: 'bold',
+                  color: '#166534',
+                  border: '1px solid #BBF7D0',
+                }}
+              >
+                💬 WhatsApp: 071 851 1165
+              </div>
             </div>
           </div>
         </div>

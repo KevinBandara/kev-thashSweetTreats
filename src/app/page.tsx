@@ -34,10 +34,10 @@ export const metadata: Metadata = {
     siteName: 'Kev & Thash Sweet Treats',
     images: [
       {
-        url: '/KevAndThashSweetTreatsLogo.png',
-        width: 800,
-        height: 800,
-        alt: 'Kev & Thash Sweet Treats Logo',
+        url: 'https://kevandthashsweets.vercel.app/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Kev & Thash Sweet Treats — Panadura, Sri Lanka',
       },
     ],
     locale: 'en_LK',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: 'Kev & Thash Sweet Treats | Panadura, Sri Lanka',
     description:
       'Custom cakes & sweet treats for every occasion in Malamulla, Panadura. Order via WhatsApp!',
-    images: ['/KevAndThashSweetTreatsLogo.png'],
+    images: ['https://kevandthashsweets.vercel.app/og-image.png'],
   },
 };
 
