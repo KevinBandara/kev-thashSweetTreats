@@ -70,13 +70,17 @@ export const translations = {
       categories: {
         All: 'All',
         Cakes: 'Cakes',
+        'Combos & Bento': 'Combos & Bento',
         Cupcakes: 'Cupcakes',
-        Brownies: 'Brownies',
-        Special: 'Special',
+        'Brownies & Jars': 'Brownies & Jars',
       },
       orderBtn: 'Order on WhatsApp',
       customCtaTitle: 'Looking for a custom cake design or specific flavor?',
       customCtaBtn: 'Chat with Us on WhatsApp',
+      savoryTeaserBadge: 'Coming Soon',
+      savoryTeaserTitle: 'Savory Treats Coming Soon! 🥟🥐',
+      savoryTeaserSub:
+        'Freshly baked Sri Lankan fish patties, crispy Chinese rolls, and savory pastries will soon be joining our menu. Stay tuned!',
     },
     events: {
       badge: 'Celebrations',
@@ -217,14 +221,18 @@ export const translations = {
         'පානදුරේදී නැවුම්ව පිළිස්සූ කේක්, කප්කේක් සහ චොකලට් බ්‍රවුනීස්. සියලුම මිල ගණන් ශ්‍රී ලංකා රුපියල් (LKR) වලින්.',
       categories: {
         All: 'සියල්ල',
-        Cakes: 'කේක්',
+        Cakes: 'කේක් වර්ග',
+        'Combos & Bento': 'කොම්බෝ & බෙන්ටෝ',
         Cupcakes: 'කප්කේක්',
-        Brownies: 'බ්‍රවුනීස්',
-        Special: 'වෙනත්',
+        'Brownies & Jars': 'බ්‍රවුනීස් & ජාර්ස්',
       },
       orderBtn: 'WhatsApp මගින් ඇණවුම්',
       customCtaTitle: 'ඔබට විශේෂිත කේක් මෝස්තරයක් හෝ රසයක් අවශ්‍යද?',
       customCtaBtn: 'WhatsApp මගින් විමසන්න',
+      savoryTeaserBadge: 'ළඟදීම බලාපොරොත්තු වන්න',
+      savoryTeaserTitle: 'ප්‍රණීත සැවරි වර්ග ළඟදීම! 🥟🥐',
+      savoryTeaserSub:
+        'නැවුම්ව පිළිස්සූ උණු උණු මාළු පැටිස්, ක්‍රිස්පි චයිනීස් රෝල්ස් සහ පේස්ට්‍රි වර්ග ඉතා ඉක්මනින් අපගේ මෙනුවට එක්වේ.',
     },
     events: {
       badge: 'සුවිශේෂී උත්සව',

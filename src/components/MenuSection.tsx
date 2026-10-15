@@ -9,7 +9,13 @@ export default function MenuSection() {
   const { t, lang } = useLanguage();
   const [activeCategory, setActiveCategory] = useState<MenuCategory>('All');
 
-  const categories: MenuCategory[] = ['All', 'Cakes', 'Cupcakes', 'Brownies', 'Special'];
+  const categories: MenuCategory[] = [
+    'All',
+    'Cakes',
+    'Combos & Bento',
+    'Cupcakes',
+    'Brownies & Jars',
+  ];
 
   const filteredItems =
     activeCategory === 'All'
@@ -122,6 +128,33 @@ export default function MenuSection() {
               </div>
             );
           })}
+        </div>
+
+        {/* Savory Treats Coming Soon Teaser */}
+        <div className="mt-14 bg-gradient-to-r from-amber-50 via-orange-50 to-pink-50 border border-amber-200/80 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-sm">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-amber-100/90 border border-amber-200 flex items-center justify-center text-3xl sm:text-4xl shadow-inner shrink-0">
+            🥟
+          </div>
+          <div className="text-center sm:text-left flex-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-200/80 text-amber-900 border border-amber-300 mb-2">
+              <span className="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span>
+              {t.menu.savoryTeaserBadge}
+            </div>
+            <h3 className="font-playfair text-xl sm:text-2xl font-bold text-[#3D1A0A] mb-1">
+              {t.menu.savoryTeaserTitle}
+            </h3>
+            <p className="text-sm sm:text-base text-[#7A3F2A] leading-relaxed">
+              {t.menu.savoryTeaserSub}
+            </p>
+          </div>
+          <a
+            href={getWhatsAppGeneralUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whitespace-nowrap px-6 py-3 rounded-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-bold text-xs sm:text-sm shadow-md shadow-amber-200 transition-all duration-200 active:scale-95 cursor-pointer"
+          >
+            {lang === 'si' ? 'විස්තර අසන්න' : 'Enquire on WhatsApp'}
+          </a>
         </div>
 
         {/* Custom Cake CTA Banner */}
